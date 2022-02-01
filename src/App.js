@@ -11,6 +11,7 @@ function App({ login }) {
   if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>;
   return (
     <div className="App">
+      <h1>UseFetch Custom Hook</h1>
       <div className="App__card">
         <div className="App__card-img">
           <a href={data.html_url}>

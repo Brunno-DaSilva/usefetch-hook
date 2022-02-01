@@ -3,6 +3,7 @@
 
 .App {
   width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,13 +14,13 @@
 h1 {
   font-size: 5rem;
   font-weight: bold;
-  font-family: "Roboto", sans-serif;
-  color: #41c2e2;
+  font-family: "Sigmar One", cursive;
+  color: hsla(191, 91%, 14%, 0.792);
 }
 h2 {
   font-size: 3rem;
   margin-top: -0.1rem;
-  color: #41c2e2;
+  color: hsla(192, 88%, 42%, 0.822);
 }
 
 .App__card {
@@ -60,7 +61,7 @@ h2 {
   width: 100%;
   opacity: 0;
   transition: 0.5s ease;
-  background-color: hsla(226, 91%, 18%, 0.568);
+  background-color: hsla(191, 91%, 14%, 0.792);
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   display: flex;
