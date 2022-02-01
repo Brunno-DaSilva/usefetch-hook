@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
+import UseFetch from "./Component/UseFetch";
 
-function App() {
+function App({ login }) {
+  const { loading, data, error } = UseFetch(
+    `https://api.github.com/users/${login}`
+  );
+
+  if (loading) return <h1>Loading</h1>;
+  if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <a href={data.html_url}>
+        <img src={data.avatar_url} alt={data.login} />
+      </a>
+      {data.name && <h2>{data.name}</h2>}
+      <p>{data.login}</p>
+      {data.location && <p>{data.location}</p>}
     </div>
   );
 }
