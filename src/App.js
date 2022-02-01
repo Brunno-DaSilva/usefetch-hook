@@ -11,12 +11,20 @@ function App({ login }) {
   if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>;
   return (
     <div className="App">
-      <a href={data.html_url}>
-        <img src={data.avatar_url} alt={data.login} />
-      </a>
-      {data.name && <h2>{data.name}</h2>}
-      <p>{data.login}</p>
-      {data.location && <p>{data.location}</p>}
+      <div className="App__card">
+        <div className="App__card-img">
+          <a href={data.html_url}>
+            <img src={data.avatar_url} alt={data.login} />
+          </a>
+        </div>
+        <div className="App__card-description">
+          {data.name && <h2>{data.name}</h2>}
+          <div>
+            <p>{data.login}</p>
+            {data.location && <p>{data.location}</p>}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
