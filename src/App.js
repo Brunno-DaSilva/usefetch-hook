@@ -10,8 +10,7 @@ function App({ login }) {
   if (loading) return <h1>Loading</h1>;
   if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>;
   return (
-    <div>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+    <div className="App">
       <a href={data.html_url}>
         <img src={data.avatar_url} alt={data.login} />
       </a>
