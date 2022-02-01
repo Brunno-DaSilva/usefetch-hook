@@ -16,6 +16,9 @@ function App({ login }) {
           <a href={data.html_url}>
             <img src={data.avatar_url} alt={data.login} />
           </a>
+          <div class="App__card-overlay">
+            <div class="App__card-overlay-text">Visit My Github</div>
+          </div>
         </div>
         <div className="App__card-description">
           {data.name && <h2>{data.name}</h2>}
